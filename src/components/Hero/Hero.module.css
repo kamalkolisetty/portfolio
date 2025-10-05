@@ -1,0 +1,257 @@
+@import "../../vars.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap'); /* Import Roboto font */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg); /* Ensure the background looks clean */
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 49px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  color: var(--color-text);
+  z-index: 2; /* Ensure content stays above blur */
+}
+
+.title,.title2 {
+  font-size: clamp(36px, 5vw, 72px); /* Responsive font size */
+  
+  margin-bottom: 33px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 120%);
+
+  -webkit-text-fill-color: transparent;
+
+  -webkit-background-clip: text;
+  z-index: 3; /* Ensure title stays above blur */
+  position: relative;
+}
+.title2{
+    display: none;
+}
+.desc {
+  font-size: clamp(18px, 3vw, 30px); /* Responsive font size */
+  
+  margin-bottom: 52px;
+}
+
+.heroimg {
+  width: 50%;
+  max-width: 100%; /* Ensures proper scaling */
+  z-index: 2; /* Ensure image is above blur but below content */
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+/* Full-screen blur effect */
+.blur-container .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Keep blur in the background */
+  overflow: hidden;
+  pointer-events: none; /* Ensure it doesn't block interactions */
+}
+
+.topblur, .bottomblur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.topblur {
+  width: 80vw; /* Adjust for wider coverage */
+  height: 80vw;
+  top: -40%;
+  left: -40%;
+  background: rgba(25, 55, 209, 0.3);
+}
+
+.bottomblur {
+  width: 80vw; /* Adjust for wider coverage */
+  height: 80vw;
+  bottom: -40%;
+  right: -40%;
+  background: rgba(25, 55, 209, 0.2);
+}
+
+  
+
+/* Glow button styles */
+.btn {
+  display: inline-block;
+  margin: 0;
+  padding: 20px 25px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ffbe1d;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffbe1d;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+}
+
+/* Glow effect */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 12px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* Hover effect */
+.btn:hover::before {
+  opacity: 1;
+}
+
+
+.buttons-container {
+  display: flex; /* Makes the buttons appear side by side */
+   /* Adds spacing between buttons */
+}
+
+.contactbtn {
+  color: var(--color-dark);
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.hero-section .blur-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Ensure the blur stays at the background */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+
+@media screen and (max-width: 832px) {
+  .container {
+    flex-direction: column-reverse; /* Stack content vertically */
+    align-items: center;   /* Center-align content */
+  }
+
+  .content {
+    align-items: center;
+    text-align: left;
+    margin-bottom: 20px; /* Add spacing between title and image */
+    width: 90%; /* Ensure content doesn't stretch across the whole screen */
+  }
+
+  .title {
+   
+    /* Slightly smaller font size for mobile */
+    margin-bottom: 20px; /* Reduce bottom margin to make space for image */
+  }
+
+  .desc {
+    font-size: 21px;
+     /* Adjust description size for better readability */
+    margin-bottom: 32px; /* Increase space between text and image */
+    line-height: 1.5; /* Increase line height to avoid text being too tight */
+  }
+
+  .heroimg {
+    width: 70%; /* Adjust image size for mobile */
+    margin-top: 20px; /* Add spacing between title and image */
+    margin-bottom: 32px; /* Ensure space after image */
+  }
+
+  .buttons-container {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    align-items: center; /* Center the buttons */
+    gap: 20px; /* Add spacing between buttons */
+    width: 100%; /* Ensure buttons don't stretch */
+  }
+
+  .btn {
+    width: 80%; /* Make buttons a bit smaller on mobile */
+    padding: 15px 25px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+}
+
+  
