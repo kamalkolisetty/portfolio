@@ -1,4 +1,4 @@
-# 🚀 Kamal Kumar Kolisetty — Dynamic  Portfolio
+# 🚀 Kamal Kumar Kolisetty — Dynamic Developer Portfolio
 
 ✨ **Live Demo:** [https://kamalkumar-kolisetty-portfolio.netlify.app/](https://kamalkumar-kolisetty-portfolio.netlify.app/)  
 *A dynamic portfolio that evolves with my GitHub activity!*
@@ -92,6 +92,18 @@ A simple, modern section with direct links to my profiles and email.
 
 ---
 
+## 🖼️ Screenshots  
+
+Here are a few glimpses of my portfolio in action!  
+
+(Add your screenshots below 👇 — for example:)  
+
+![Homepage Screenshot](https://i.imgur.com/your-homepage-image.png)  
+![Projects Section Screenshot](https://i.imgur.com/your-projects-image.png)  
+![Contact Section Screenshot](https://i.imgur.com/your-contact-image.png)  
+
+---
+
 ## 💬 Let’s Connect!  
 
 - 🔗 [**LinkedIn**](https://www.linkedin.com/in/kamal-kumar-kolisetty-19b944221)  
@@ -101,4 +113,6 @@ A simple, modern section with direct links to my profiles and email.
 
 ---
 
-© 2025 **Kamal Kumar Kolisetty** | Built with ❤️, ☕, and endless creativity.  
+<p align="center">
+  © 2025 <strong>Kamal Kumar Kolisetty</strong> | Built with ❤️, ☕, and endless creativity.
+</p>
