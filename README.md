@@ -1,5 +1,3 @@
-
-
 # 🚀 **Kamal Kumar Kolisetty** — Your Full-Stack Wizard  
 
 ✨ **Explore My World:** [kamalkumar-kolisetty-portfolio.netlify.app](https://kamalkumar-kolisetty-portfolio.netlify.app/)  
@@ -48,11 +46,13 @@ From phones to 4K monitors, this portfolio *adapts* and dazzles:
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  
 ![CSS Modules](https://img.shields.io/badge/CSS_Modules-000000?style=for-the-badge&logo=css-modules&logoColor=white)  
 ![GitHub API](https://img.shields.io/badge/GitHub_API-181717?style=for-the-badge&logo=github&logoColor=white)  
+![GitHub Token](https://img.shields.io/badge/GitHub_Token-181717?style=for-the-badge&logo=github&logoColor=white)  
+*For the first time, leveraged a GitHub Personal Access Token to securely authenticate and dynamically fetch repository data, enabling real-time updates for projects and resume links.*  
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)  
 
 ### Tools I Love  
 - 🎨 **Figma + CSS Modules**: For pixel-perfect designs.
--  [**PhotoRoom Background Remover**](https://www.photoroom.com/tools/background-remover) – For creating clean, transparent images.  
+- [**PhotoRoom Background Remover**](https://www.photoroom.com/tools/background-remover) – For creating clean, transparent images.  
  [**iLoveIMG Resize Tool**](https://www.iloveimg.com/resize-image/resize-png#resize-options,pixels) – For resizing and optimizing PNG images.  
 - 🌐 **GitHub REST API**: The heartbeat of my dynamic content.  
 
@@ -81,11 +81,20 @@ Clean, modern, and ready for action with links to my profiles and email.
 
 ## 📸 **Sneak Peek**  
 
-See it in action! *(Add your screenshots here)*  
-- 🏠 [Homepage](#)  
-- 📂 [Projects Section](#)  
-- 📧 [Contact Section](#)  
+See it in action!  
+- 🖥 **Desktop Views**  
+  - Landing Page: ![](/1.png)  
+  - About Me: ![](/2.png)  
+  - Projects: ![](/3.png)  
 
+- 📱 **Mobile Views**  
+  - Landing Page: ![](/4.png)  
+  - Projects: ![](/5.png)  
+  - Contact: ![](/6.png)  
+
+- 🌐 **Network Tab (GitHub API Calls)**  
+  - Inspect Network Tab: ![](/7.png)  
+ 
 ---
 
 ## 🤝 **Let’s Build Something Epic!**  
