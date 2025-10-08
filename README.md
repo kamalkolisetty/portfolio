@@ -22,7 +22,9 @@ This isn’t just a portfolio; it’s a **living showcase** powered by the **Git
 ### 1. **Dynamic & Alive** — Fueled by GitHub  
 No stale content here! My portfolio syncs with my GitHub to stay fresh:  
 - 🛠 **Projects That Evolve**: The “Projects” section auto-updates with my latest repos tagged `portfolio-project`. Push code, see it shine instantly!  
-- 📄 **Smart Resume**: One click to my latest resume, dynamically pulled from GitHub. Update once, reflect everywhere.  
+- 📄 **Smart Resume Fetch**: My resume link is dynamically grabbed from a repo tagged resume-link. Update the PDF in my GitHub README, and it’s live on the site. No hardcoding, just magic!
+
+  
 
 ### 2. **A Visual Feast** — Animations That Wow  
 Every scroll feels like a journey:  
@@ -49,8 +51,9 @@ From phones to 4K monitors, this portfolio *adapts* and dazzles:
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)  
 
 ### Tools I Love  
-- 🎨 **Figma + CSS Modules**: For pixel-perfect designs.  
-- 🖼 **PhotoRoom** & **iLoveIMG**: For crisp, optimized visuals.  
+- 🎨 **Figma + CSS Modules**: For pixel-perfect designs.
+-  [**PhotoRoom Background Remover**](https://www.photoroom.com/tools/background-remover) – For creating clean, transparent images.  
+ [**iLoveIMG Resize Tool**](https://www.iloveimg.com/resize-image/resize-png#resize-options,pixels) – For resizing and optimizing PNG images.  
 - 🌐 **GitHub REST API**: The heartbeat of my dynamic content.  
 
 ---
