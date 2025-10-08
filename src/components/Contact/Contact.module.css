@@ -1,6 +1,6 @@
-@import '../../vars.css' ;
- 
-.container{
+@import '../../vars.css';
+
+.container {
     color: var(--color-text);
     margin-top: 120px;
     background-color: var(--color-secondary);
@@ -12,19 +12,18 @@
     gap: 10px;
 }
 
-.text h2{
-    font-size: 50px;
+.text h2 {
+    font-size: 47px;
     font-weight: 700;
     letter-spacing: 3px;
-
 }
-.text p{
-    font-size: 30px;
+
+.text p {
+    font-size: 28px;
     font-weight: 400;
-
 }
 
-.links{
+.links {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -32,15 +31,14 @@
     gap: 10px;
 }
 
-.link{
+.link {
     padding: 2px;
     display: flex;
     align-items: center;
-    gap:2px;
-
+    gap: 2px;
 }
 
-.link a{
+.link a {
     color: var(--color-text);
     text-decoration: none;
     font-size: 20px;
@@ -48,21 +46,24 @@
     letter-spacing: 1.5px;
 }
 
-@media screen and (max-width:830px) {
-    
-    .container{
+@media screen and (max-width: 830px) {
+    .container {
         flex-direction: column;
         gap: 23px;
-
     }
-    .text{
+
+    .text {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .links{
-    padding-left: 17px;
+
+    .links {
+        padding-left: 5px;
         gap: 6px;
     }
-    
+
+    .link a {
+        font-size: 19px; /* Reduced font size for hyperlinks on smaller screens */
+    }
 }

@@ -41,9 +41,9 @@ const parsePortfolioData = (readmeContent) => {
       skills: portfolioData.skills || defaultData.skills,
       image: portfolioData.image || defaultData.image,
     };
+    // console.log('Parsed portfolio data:', parsedData);
 
-    console.log('Parsed portfolio data:', parsedData);
-
+    console.log('Parsed portfolio data:');
     return parsedData;
   } catch (error) {
     console.error('Error parsing portfolio data:', error);
@@ -66,27 +66,46 @@ export const Projects = () => {
           throw new Error('GitHub username or token is missing in environment variables');
         }
 
-        // Fetch repositories
-        const response = await fetch(
-          `https://api.github.com/users/${import.meta.env.VITE_GITHUB_USERNAME}/repos`,
-          {
-            headers: {
-              Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-              Accept: 'application/vnd.github.v3+json',
-            },
-          }
-        );
+        // Fetch all repositories across pages
+        let allRepos = [];
+        let page = 1;
+        const perPage = 100; // Max allowed by GitHub API
 
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`Failed to fetch repositories: ${response.status} - ${errorText}`);
+        while (true) {
+          const response = await fetch(
+            `https://api.github.com/users/${import.meta.env.VITE_GITHUB_USERNAME}/repos?per_page=${perPage}&page=${page}`,
+            {
+              headers: {
+                Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
+                Accept: 'application/vnd.github.v3+json',
+              },
+            }
+          );
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to fetch repositories: ${response.status} - ${errorText}`);
+          }
+
+          const repos = await response.json();
+          console.log(`Fetched repositories (page ${page}):`, repos.map(repo => repo.name));
+
+          allRepos = [...allRepos, ...repos];
+
+          // Check if there are more pages (GitHub API returns empty array or fewer items when done)
+          if (repos.length < perPage) {
+            break;
+          }
+
+          page++;
         }
 
-        const repos = await response.json();
-        console.log('Fetched repositories:', repos.map(repo => repo.name));
-        const filteredRepos = repos.filter(repo => repo.topics.includes('portfolio-project'));
+        console.log('All fetched repositories:', allRepos.map(repo => repo.name));
 
-        // NEW: Sort filtered repos by updated_at (most recent first)
+        // Filter repos with portfolio-project topic
+        const filteredRepos = allRepos.filter(repo => repo.topics.includes('portfolio-project'));
+
+        // Sort filtered repos by updated_at (most recent first)
         filteredRepos.sort((a, b) => {
           const dateA = new Date(a.updated_at);
           const dateB = new Date(b.updated_at);

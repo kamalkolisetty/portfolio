@@ -5,7 +5,7 @@
     background: linear-gradient(180deg, #0077b6 0%, #00b2ca 100%);
     box-shadow: 0 16px 14px 0 #041523;
     padding: 18px 24px;
-    max-width: 385px;
+    max-width: 375px;
     min-height: 400px;
     cursor: pointer;
     justify-content: space-between;
@@ -99,3 +99,8 @@
     transform: scaleX(1);
   }
   
+  @media screen and (max-width: 830px) {
+    .container {
+        max-width: 335px; /* Reduced max-width for smaller screens */
+    }
+}

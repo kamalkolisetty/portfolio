@@ -46,12 +46,69 @@
 }
 
 @media screen and (max-width:830px) {
-    .navbar{
-      flex-direction: column;
-      align-items: flex-start;
-       height: 8vh;
+   @import '../../vars.css';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    z-index: 2;
+    cursor: pointer;
+    width: 100vw;
+    height: 10vh;
+    background-color: #002d72;
+    padding-right: 12px;
+}
+
+.menuBtn {
+    display: none;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    padding-left: 32px;
+    color: #ffffff;
+}
+
+.menu {
+    display: flex;
+}
+
+.menuItems {
+    display: flex;
+    gap: 47px;
+    list-style: none;
+    padding-right: 32px;
+}
+
+.menuItems a {
+    font-size: 25px;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 830px) {
+    .navbar {
+        position: fixed; /* Fix navbar to top */
+        top: 0; /* Align to top of viewport */
+        left: 0; /* Ensure it spans full width */
+        width: 100vw; /* Full viewport width */
+        flex-direction: column;
+        align-items: flex-start;
+        height: 8vh; /* Reduced height for small screens */
+        z-index: 1000; /* Ensure navbar stays above other content */
     }
-    .menu{
+
+    /* Add padding to body to prevent content from being hidden under fixed navbar */
+    body {
+        padding-top: 8vh; /* Match navbar height to push content down */
+    }
+
+    .menu {
         position: absolute;
         right: 0;
         margin-right: 10%;
@@ -60,26 +117,35 @@
         gap: 11px;
         z-index: 3;
     }
-    .menuBtn{
+
+    .menuBtn {
         display: block;
         cursor: pointer;
-        
+        position: absolute; /* Position hamburger button */
+        /* Adjust to vertically center in navbar */
+        right: 10px; /* Space from right edge */
     }
-    .menuItems{
+
+    .menuItems {
         display: none;
         flex-direction: column;
         align-items: center;
         gap: 13px;
         border-radius: 10px;
-        background: rgb(25,55,109);
-        background: linear-gradient(0deg,rgba(25,55,109,0.2) 0% , rgba(25,55,109,1) 100%);
+        background: rgb(25, 55, 109);
+        background: linear-gradient(0deg, rgba(25, 55, 109, 0.2) 0%, rgba(25, 55, 109, 1) 100%);
         padding: 24px 33px;
-        box-shadow: 0 0 4px rgba(0,0,0,0.25);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+        position: absolute; /* Ensure menu appears below navbar */
+        top: 8vh; /* Position below fixed navbar */
+        right: 10%; /* Match menu margin-right */
+        width: 200px; /* Fixed width for dropdown */
     }
+
     .menuOpen {
         display: flex;
         z-index: 1;
-
     }
+}
 }
 
